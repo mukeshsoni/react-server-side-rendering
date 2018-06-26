@@ -1,6 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
-const CompressionPlugin = require("compression-webpack-plugin");
+// const CompressionPlugin = require("compression-webpack-plugin");
 var nodeExternals = require("webpack-node-externals");
 
 var browserConfig = {
@@ -23,8 +23,8 @@ var browserConfig = {
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: "true"
-    }),
-    new CompressionPlugin()
+    })
+    // new CompressionPlugin()
   ]
 };
 
