@@ -1,0 +1,52 @@
+{
+  "name": "react-server-side-rendering",
+  "version": "0.0.1",
+  "description": "Playground for me to try out server side rendering with react, react-router, and styled-components",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack -w --mode development & nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "react-router",
+    "server",
+    "side",
+    "rendering",
+    "ssr",
+    "styled-components"
+  ],
+  "author": "Mukesh Soni",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "nodemon": "^1.17.5",
+    "style-loader": "^0.21.0",
+    "to-string-loader": "^1.1.5",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-fontawesome": "^1.6.1",
+    "react-router-dom": "^4.3.1",
+    "rebass": "^2.0.0-10",
+    "serialize-javascript": "^1.5.0",
+    "styled-components": "^3.3.3",
+    "styled-space": "^1.0.1",
+    "styled-system": "^2.3.2"
+  }
+}
