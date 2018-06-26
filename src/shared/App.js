@@ -9,8 +9,7 @@ import SearchPage from "./SearchPage";
 import ModalWithHeight from "./ModalWithHeight";
 import listingData from "./listing_data.js";
 import Loadable from "react-loadable";
-
-const Loading = () => <div>Loading...</div>;
+import Loading from "./Loading";
 
 const LoadableDetails = Loadable({
   loader: () => {
@@ -26,6 +25,13 @@ class App extends Component {
       showFilterModal: false,
       selectedListingId: null
     };
+  }
+
+  componentDidMount() {
+    // let's preload the details screen 300 milliseconds after the app has mounted
+    setTimeout(() => {
+      LoadableDetails.preload();
+    }, 300);
   }
 
   handleListingClick = listingId => {
