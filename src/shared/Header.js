@@ -29,11 +29,11 @@ class Header extends Component {
           alignItems="center"
           width="100%"
         >
-          <Flex flex="1">
+          <Flex>
             <Menu />
             <Logo />
           </Flex>
-          <Flex alignItems="center" flex="1">
+          <Flex alignItems="center">
             <HideOnNonMobile mr={2}>
               <ButtonTransparent onClick={this.props.onFilterLinkClick}>
                 <FontAwesome name="filter" inverse={true} />
