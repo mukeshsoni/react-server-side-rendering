@@ -3,6 +3,16 @@
   "plugins": [
     "transform-object-rest-spread",
     "transform-class-properties",
+    "syntax-dynamic-import",
+
+    [
+      "babel-plugin-import-inspector",
+      {
+        "currentModuleFileName": false,
+        "serverSideRequirePath": true,
+        "webpackRequireWeakId": true
+      }
+    ],
     [
       "styled-components",
       {

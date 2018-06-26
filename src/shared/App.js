@@ -4,10 +4,20 @@ import { Flex } from "rebass";
 import { Route, Switch } from "react-router-dom";
 import Header from "./Header.js";
 import Filters from "./Filters/Filters";
-import DetailScreen from "./DetailScreen";
+// import DetailScreen from "./DetailScreen";
 import SearchPage from "./SearchPage";
 import ModalWithHeight from "./ModalWithHeight";
 import listingData from "./listing_data.js";
+import Loadable from "react-loadable";
+
+const Loading = () => <div>Loading...</div>;
+
+const LoadableDetails = Loadable({
+  loader: () => {
+    return import("./DetailScreen");
+  },
+  loading: Loading
+});
 
 class App extends Component {
   constructor() {
@@ -53,7 +63,7 @@ class App extends Component {
             path="/ad/:adId"
             render={({ match }) => {
               return (
-                <DetailScreen
+                <LoadableDetails
                   listing={listingData.find(
                     listing => listing.id === +match.params.adId
                   )}
