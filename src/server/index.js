@@ -1,4 +1,6 @@
 import express from "express";
+import compression from "compression";
+// import expressStaticGzip from "express-static-gzip";
 import cors from "cors";
 import React from "react";
 import { renderToString } from "react-dom/server";
@@ -11,6 +13,8 @@ import theme from "../shared/theme";
 const app = express();
 
 app.use(cors());
+app.use(compression());
+// app.use("/", expressStaticGzip("public"));
 app.use(express.static("public"));
 
 app.get("*", (req, res, next) => {
