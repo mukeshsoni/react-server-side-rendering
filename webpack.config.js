@@ -26,6 +26,7 @@ var browserConfig = {
     })
     // new CompressionPlugin()
   ]
+  // mode: "development"
 };
 
 var serverConfig = {

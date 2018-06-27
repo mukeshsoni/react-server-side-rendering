@@ -31,7 +31,7 @@ class App extends Component {
     // let's preload the details screen 300 milliseconds after the app has mounted
     setTimeout(() => {
       LoadableDetails.preload();
-    }, 300);
+    }, 1000);
   }
 
   handleListingClick = listingId => {

@@ -8,7 +8,7 @@ export default class Listings extends Component {
   getListings() {
     return this.props.data.map((listing, index) => {
       return (
-        <FlexPlus flex="1" minWidth={300} index={"listing_" + listing.id}>
+        <FlexPlus flex="1" minWidth={300} key={"listing_" + listing.id}>
           <Link to={`/ad/${listing.id}`} key={index}>
             <Listing
               listing={listing}
