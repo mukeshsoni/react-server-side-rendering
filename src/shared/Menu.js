@@ -1,61 +1,61 @@
-import React, { Component } from "react";
-import { Link, Flex, Box, Drawer, Divider } from "rebass";
-import FontAwesome from "react-fontawesome";
-import HideOnMobile from "./HideOnMobile.js";
-import HideOnNonMobile from "./HideOnNonMobile.js";
-import YellowButton from "./Button/YellowButton.js";
-import SubduedText from "./Text/SubduedText.js";
+import React, { Component } from 'react';
+import { Link, Flex, Box, Drawer, Divider } from 'rebass';
+import FontAwesome from 'react-fontawesome';
+import HideOnMobile from './HideOnMobile.js';
+import HideOnNonMobile from './HideOnNonMobile.js';
+import YellowButton from './Button/YellowButton.js';
+import SubduedText from './Text/SubduedText.js';
 // import Drawer from './Drawer.js'
 
 const menuConfig = [
   {
-    header: "ADS",
+    header: 'ADS',
     items: [
       {
-        icon: "search",
-        name: "All ads"
+        icon: 'search',
+        name: 'All ads'
       },
       {
-        icon: "tag",
-        name: "Post your ad"
+        icon: 'tag',
+        name: 'Post your ad'
       }
     ]
   },
   {
-    header: "USER PROFILE",
+    header: 'USER PROFILE',
     items: [
       {
-        icon: "tag",
-        name: "My ads"
+        icon: 'tag',
+        name: 'My ads'
       },
       {
-        icon: "star",
-        name: "Favorites"
+        icon: 'star',
+        name: 'Favorites'
       },
       {
-        icon: "cog",
-        name: "Settings"
+        icon: 'cog',
+        name: 'Settings'
       }
     ]
   },
   {
-    header: "OTHER",
+    header: 'OTHER',
     items: [
       {
-        icon: "comments",
-        name: "FAQ"
+        icon: 'comments',
+        name: 'FAQ'
       },
       {
-        icon: "shield",
-        name: "Stay safe"
+        icon: 'shield',
+        name: 'Stay safe'
       },
       {
-        icon: "fighter-jet",
-        name: "How to sell fast"
+        icon: 'fighter-jet',
+        name: 'How to sell fast'
       },
       {
-        icon: "ellipsis-h",
-        name: "More"
+        icon: 'ellipsis-h',
+        name: 'More'
       }
     ]
   }
@@ -70,7 +70,7 @@ export default class Menu extends Component {
 
   getHidableLinks() {
     return (
-      <Flex flexDirection={["column", "row"]} mr={2}>
+      <Flex flexDirection={['column', 'row']} mr={2}>
         <Link>All ads</Link>
         <Link>My Profile</Link>
       </Flex>
@@ -111,9 +111,9 @@ export default class Menu extends Component {
   render() {
     const { showMenuOnMobile } = this.state;
 
-    const NewDrawer = Drawer.extend`
-      position: fixed;
-    `;
+    // const NewDrawer = Drawer.extend`
+    //   position: fixed;
+    // `;
 
     return (
       <Flex>
@@ -121,20 +121,15 @@ export default class Menu extends Component {
           <HideOnNonMobile mr={2}>
             <FontAwesome name="bars" inverse={true} />
           </HideOnNonMobile>
-          <HideOnMobile flexDirection={["column", "row"]} mr={2}>
+          <HideOnMobile flexDirection={['column', 'row']} mr={2}>
             {this.getHidableLinks()}
           </HideOnMobile>
-          <NewDrawer
-            open={showMenuOnMobile}
-            bg="dark"
-            position="left"
-            color="white"
-          >
+          <Drawer open={showMenuOnMobile} bg="dark" position="left" color="white">
             <Flex flexDirection="column" p={3}>
               <YellowButton mb={3}>Post your ad</YellowButton>
               {this.getSections()}
             </Flex>
-          </NewDrawer>
+          </Drawer>
         </Flex>
       </Flex>
     );
