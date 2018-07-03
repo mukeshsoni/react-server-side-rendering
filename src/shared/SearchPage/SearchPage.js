@@ -1,19 +1,19 @@
-import React, { Component } from "react"
-import { Flex, Box, Text } from "rebass"
-import FlexPlus from "../FlexPlus.js"
-import SearchRow from "./SearchRow.js"
-import MultiLevelSelector, { getItemFromPath } from "../MultiLevelSelector"
-import Listings from "../Listings.js"
-import Filters from "../Filters/Filters"
-import HideOnMobile from "../HideOnMobile.js"
-import categories from "../categories"
-import locations from "../locations.js"
-import ModalWithHeight from "../ModalWithHeight.js"
-import listingData from "../listing_data"
+import React, { Component } from "react";
+import { Flex, Box, Text } from "rebass";
+import FlexPlus from "../FlexPlus.js";
+import SearchRow from "./SearchRow.js";
+import MultiLevelSelector, { getItemFromPath } from "../MultiLevelSelector";
+import Listings from "../Listings.js";
+import Filters from "../Filters/Filters";
+import HideOnMobile from "../HideOnMobile.js";
+import categories from "../categories";
+import locations from "../locations.js";
+import ModalWithHeight from "../ModalWithHeight.js";
+import listingData from "../listing_data";
 
 function getFilteredData(data, searchString) {
   if (!searchString) {
-    return data
+    return data;
   }
 
   return data.filter(
@@ -22,7 +22,7 @@ function getFilteredData(data, searchString) {
       listing.location.toLowerCase().includes(searchString.toLowerCase()) ||
       listing.category.toLowerCase().includes(searchString.toLowerCase()) ||
       listing.description.toLowerCase().includes(searchString.toLowerCase())
-  )
+  );
 }
 
 class SearchPage extends Component {
@@ -34,40 +34,40 @@ class SearchPage extends Component {
     locationPath: [],
     selectedListingId: null,
     searchString: ""
-  }
+  };
 
   handleCategoryButtonClick = () => {
-    this.setState({ showCategoryModal: true })
-  }
+    this.setState({ showCategoryModal: true });
+  };
 
   applyCategoryFilter = categoryPath => {
-    this.setState({ categoryPath, showCategoryModal: false })
-  }
+    this.setState({ categoryPath, showCategoryModal: false });
+  };
 
   handleCategoryModalCloseClick = () => {
-    this.setState({ showCategoryModal: false })
-  }
+    this.setState({ showCategoryModal: false });
+  };
 
   handleLocationButtonClick = () => {
-    this.setState({ showLocationModal: true })
-  }
+    this.setState({ showLocationModal: true });
+  };
 
   applyLocationFilter = locationPath => {
-    this.setState({ locationPath, showLocationModal: false })
-  }
+    this.setState({ locationPath, showLocationModal: false });
+  };
 
   handleLocationModalCloseClick = () => {
-    this.setState({ showLocationModal: false })
-  }
+    this.setState({ showLocationModal: false });
+  };
 
   handleListingClick = listingId => {
-    this.setState({ selectedListingId: listingId })
-    this.props.onListingClick(listingId)
-  }
+    this.setState({ selectedListingId: listingId });
+    this.props.onListingClick(listingId);
+  };
 
   handleSearchInput = e => {
-    this.setState({ searchString: e.target.value })
-  }
+    this.setState({ searchString: e.target.value });
+  };
 
   render() {
     const {
@@ -77,7 +77,7 @@ class SearchPage extends Component {
       locationPath,
       selectedListingId,
       searchString
-    } = this.state
+    } = this.state;
 
     return (
       <FlexPlus
@@ -146,8 +146,8 @@ class SearchPage extends Component {
           </ModalWithHeight>
         )}
       </FlexPlus>
-    )
+    );
   }
 }
 
-export default SearchPage
+export default SearchPage;

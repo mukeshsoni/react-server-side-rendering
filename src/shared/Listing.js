@@ -1,17 +1,17 @@
-import React, { PureComponent } from "react"
-import { Box, Flex, Text, Image } from "rebass"
-import { SubduedText, BoldText } from "./Text"
-import FlexPlus from "./FlexPlus"
-import Space from "styled-space"
-import { withTheme } from "styled-components"
+import React, { PureComponent } from "react";
+import { Box, Flex, Text, Image } from "rebass";
+import { SubduedText, BoldText } from "./Text";
+import FlexPlus from "./FlexPlus";
+import Space from "styled-space";
+import { withTheme } from "styled-components";
 
 class Listing extends PureComponent {
   render() {
     const {
       onClick,
       theme: { colors }
-    } = this.props
-    const { title, location, category, price } = this.props.listing
+    } = this.props;
+    const { title, location, category, price } = this.props.listing;
 
     return (
       <FlexPlus
@@ -26,14 +26,14 @@ class Listing extends PureComponent {
             <Text fontWeight="bold">{title}</Text>
             <Flex>
               <SubduedText>{location}</SubduedText>,{" "}
-              <SubduedText>{category}</SubduedText>
+              <SubduedText> {category}</SubduedText>
             </Flex>
             <Text color={colors.brand}>Rs. {price}</Text>
           </Space>
         </Flex>
       </FlexPlus>
-    )
+    );
   }
 }
 
-export default withTheme(Listing)
+export default withTheme(Listing);
